@@ -15,7 +15,7 @@ return new class extends Migration
             $table->id();
             $table->string('name');
             $table->string('email');
-            $table->integer('phone')->unique()->index();
+            $table->bigInteger('phone')->unique()->index();
             $table->string('language');
             $table->string('credentials');
             $table->string('profile');
