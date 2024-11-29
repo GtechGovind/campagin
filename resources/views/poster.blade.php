@@ -8,11 +8,11 @@
 
             <!-- Buttons -->
             <div class="flex space-x-4 w-full max-w-lg">
-                <button type="button" onclick="downloadCanvasAsImage('{{$name . "_poster.png"}}')"
+                <button type="button" onclick="downloadCanvasAsImage('{{$name . " poster.png"}}')"
                         class="py-3 px-5 w-full font-medium text-center text-white rounded-lg bg-primary-700 hover:bg-primary-800 focus:ring-4 focus:outline-none focus:ring-primary-300">
                     Download
                 </button>
-                <button type="button" onclick="shareCanvasAsImage('{{$name . "_poster.png"}}')"
+                <button type="button" onclick="shareCanvasAsImage('{{$name . " poster.png"}}')"
                         class="py-3 px-5 w-full font-medium text-center text-white rounded-lg bg-primary-700 hover:bg-primary-800 focus:ring-4 focus:outline-none focus:ring-primary-300">
                     Share
                 </button>
@@ -245,7 +245,7 @@
                 const shareData = {
                     title: title,
                     text: text,
-                    files: [new File([blob], 'canvas_image.png', { type: 'image/png' })], // File object for sharing
+                    files: [new File([blob], title, { type: 'image/png' })],
                 };
                 if (navigator.share) {
                     await navigator.share(shareData);
@@ -254,7 +254,8 @@
                     alert('Web Share API is not supported on this device');
                 }
             } catch (error) {
-                alert(error);
+                console.log(error)
+                alert("Failed to share the image!")
             }
         }
 
