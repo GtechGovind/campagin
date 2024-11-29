@@ -164,8 +164,8 @@
                 // Load and draw the profile image in a circular shape
                 const profile = await loadImage(profileUrl);
                 const profileRadius = width * 0.125; // Radius of the circular profile image
-                const x = width * 0.09;               // X-coordinate for the profile image
-                const y = height * 0.035;             // Y-coordinate for the profile image
+                const x = width * 0.084;               // X-coordinate for the profile image
+                const y = height * 0.03;             // Y-coordinate for the profile image
 
                 // Draw the circular profile image
                 ctx.save();

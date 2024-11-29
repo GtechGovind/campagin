@@ -14,9 +14,18 @@ class HomeController extends Controller
     {
         return view('home', [
             'languages' => [
-                'English',
-                'Hindi',
-                'Marathi',
+                'HINDI',
+                'ENGLISH',
+                'BENGALI',
+                /*'ASSAMESE',
+                'GUJARATI',
+                'KANNADA',
+                'MALAYALAM',
+                'MARATHI',
+                'ORIYA',
+                'PUNJABI',
+                'TAMIL',
+                'TELUGU',*/
             ]
         ]);
     }
@@ -29,12 +38,14 @@ class HomeController extends Controller
             'phone' => 'required|string|max:15',
             'credentials' => 'required|string|max:255',
             'language' => 'required|string',
+            'officer_email' => 'required|string',
         ], [
             'name.required' => 'Name field is required.',
             'email.required' => 'Email field is required.',
             'phone.required' => 'Phone Number field is required.',
             'credentials.required' => 'Credentials field is required.',
             'language.required' => 'Language field is required.',
+            'language.officer_email' => 'Please enter valid officer email.',
         ]);
 
         // CHECK FILE
@@ -57,6 +68,7 @@ class HomeController extends Controller
                 'name' => $validated['name'],
                 'email' => $validated['email'],
                 'phone' => $validated['phone'],
+                'officer_email' => $validated['officer_email'],
                 'credentials' => $validated['credentials'],
                 'language' => $validated['language'],
                 'profile' => $path,
