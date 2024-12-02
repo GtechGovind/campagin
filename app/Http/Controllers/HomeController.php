@@ -38,14 +38,16 @@ class HomeController extends Controller
             'phone' => 'required|string|max:15',
             'credentials' => 'required|string|max:255',
             'language' => 'required|string',
-            'officer_email' => 'required|string',
+            'fso_name' => 'required|string',
+            'fso_emp_id' => 'required|string',
         ], [
             'name.required' => 'Name field is required.',
             'email.required' => 'Email field is required.',
             'phone.required' => 'Phone Number field is required.',
             'credentials.required' => 'Credentials field is required.',
             'language.required' => 'Language field is required.',
-            'language.officer_email' => 'Please enter valid officer email.',
+            'language.fso_name' => 'Please enter valid FSO name',
+            'language.fso_emp_id' => 'Please enter valid FSO employee id',
         ]);
 
         // CHECK FILE
@@ -68,7 +70,8 @@ class HomeController extends Controller
                 'name' => $validated['name'],
                 'email' => $validated['email'],
                 'phone' => $validated['phone'],
-                'officer_email' => $validated['officer_email'],
+                'fso_name' => $validated['fso_name'],
+                'fso_emp_id' => $validated['fso_emp_id'],
                 'credentials' => $validated['credentials'],
                 'language' => $validated['language'],
                 'profile' => $path,

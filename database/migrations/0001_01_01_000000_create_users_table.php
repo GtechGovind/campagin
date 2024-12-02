@@ -15,12 +15,13 @@ return new class extends Migration
             $table->id();
             $table->string('name');
             $table->string('email');
-            $table->string('officer_email');
             $table->bigInteger('phone')->unique()->index();
             $table->string('language');
             $table->string('credentials');
             $table->string('profile');
             $table->string('password');
+            $table->string('fso_name');
+            $table->string('fso_emp_id');
             $table->rememberToken();
             $table->timestamps();
         });

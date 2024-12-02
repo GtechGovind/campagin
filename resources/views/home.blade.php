@@ -92,10 +92,18 @@
                 </div>
 
                 <!-- Full Name and Email Address -->
-                <div>
-                    <label for="officer_email" class="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300">Officer Email Address</label>
-                    <input type="email" id="officer_email" name="officer_email" class="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-500 focus:border-primary-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white" placeholder="abc@example.com" required>
-                    @error('officer_email')<span class="text-xs font-semibold text-red-700 dark:text-red-500">{{ $message }}</span>@enderror
+                <div class="grid gap-4 md:grid-cols-2">
+                    <div>
+                        <label for="fso_name" class="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300">FSO Name</label>
+                        <input type="text" id="fso_name" name="fso_name" class="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-500 focus:border-primary-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white" placeholder="FSO Name" required>
+                        @error('fso_name')<span class="text-xs font-semibold text-red-700 dark:text-red-500">{{ $message }}</span>@enderror
+                    </div>
+
+                    <div>
+                        <label for="fso_emp_id" class="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300">Employee ID</label>
+                        <input type="text" id="fso_emp_id" name="fso_emp_id" class="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-500 focus:border-primary-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white" placeholder="FSO EPM ID" required>
+                        @error('fso_emp_id')<span class="text-xs font-semibold text-red-700 dark:text-red-500">{{ $message }}</span>@enderror
+                    </div>
                 </div>
 
                 <!-- Buttons -->
