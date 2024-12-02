@@ -11,18 +11,7 @@ Route::get('/data/{code}', function ($code) {
 
 
     $groupedData = DB::table('your_table_name')
-        ->select('fso_name', DB::raw('
-        JSON_ARRAYAGG(JSON_OBJECT(
-            "id", id,
-            "name", name,
-            "email", email,
-            "phone", phone,
-            "language", language,
-            "credentials", credentials,
-            "profile", profile,
-            "fso_emp_id", fso_emp_id
-        )) as details
-    '))
+        ->select()
         ->groupBy('fso_name')
         ->get();
 
