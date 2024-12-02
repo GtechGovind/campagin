@@ -10,8 +10,7 @@ Route::get('/data/{code}', function ($code) {
         return response()->json(["error" => "Unauthorized"], 401);
 
 
-    $groupedData = DB::table('your_table_name')
-        ->select()
+    $groupedData = DB::table('users')
         ->groupBy('fso_name')
         ->get();
 
