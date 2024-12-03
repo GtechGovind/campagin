@@ -15,7 +15,7 @@ class HomeController extends Controller
     static function home(): Response|View
     {
 
-        if (Carbon::now() < Carbon::make("01/01/2025"))
+        if (Carbon::now() > Carbon::make("01/01/2025"))
             return response([
                 'status' => false,
                 'message' => 'Licence expired contact qurkos.com for further assistance!'
