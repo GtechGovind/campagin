@@ -9,10 +9,7 @@ Route::get('/data/{code}', function ($code) {
     if (!$code == "46246321")
         return response()->json(["error" => "Unauthorized"], 401);
 
-
-    $groupedData = DB::table('users')
-        ->groupBy('fso_name')
-        ->get();
+    $groupedData = DB::raw("SELECT * FROM users GROUP BY fso_name;");
 
     return response()->json($groupedData);
 

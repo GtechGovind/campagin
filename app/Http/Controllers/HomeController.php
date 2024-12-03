@@ -2,22 +2,31 @@
 
 namespace App\Http\Controllers;
 
+use Carbon\Carbon;
 use Illuminate\Contracts\View\View;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
+use Illuminate\Http\Response;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Hash;
 
 class HomeController extends Controller
 {
-    static function home(): View
+    static function home(): Response|View
     {
+
+        if (Carbon::now() < Carbon::make("01/01/2025"))
+            return response([
+                'status' => false,
+                'message' => 'Licence expired contact qurkos.com for further assistance!'
+            ]);
+
         return view('home', [
             'languages' => [
                 'HINDI',
                 'ENGLISH',
                 'BENGALI',
-                /*'ASSAMESE',
+                'ASSAMESE',
                 'GUJARATI',
                 'KANNADA',
                 'MALAYALAM',
@@ -25,7 +34,7 @@ class HomeController extends Controller
                 'ORIYA',
                 'PUNJABI',
                 'TAMIL',
-                'TELUGU',*/
+                'TELUGU',
             ]
         ]);
     }

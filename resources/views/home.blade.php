@@ -111,6 +111,7 @@
                     <button type="submit" class="py-3 px-5 w-full font-medium text-center text-white rounded-lg bg-primary-700 hover:bg-primary-800 focus:ring-4 focus:outline-none focus:ring-primary-300">Submit</button>
                     <button type="reset" id="clear-button" class="py-3 px-5 w-full font-medium text-center text-gray-700 bg-gray-200 hover:bg-gray-300 focus:ring-4 focus:outline-none focus:ring-gray-300 rounded-lg">Clear</button>
                 </div>
+
             </form>
         </div>
     </section>
